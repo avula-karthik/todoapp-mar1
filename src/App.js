@@ -1,11 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import TodoUseReducer from './TodoUseReducer';
-
-const App = () => {
+import TodoContext from './TodoContext';
+import ToDoApp from './ToDoApp';
+const App = ()=>  {
+  const myTodos=[{ item: "Play", status: "Complete" }]
   return (
-    <div className='App'>
-        <TodoUseReducer />
+    <div>
+      <TodoContext.Provider value={myTodos}>
+        <ToDoApp />
+      </TodoContext.Provider>
+      
     </div>
   );
 }
